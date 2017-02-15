@@ -8,9 +8,9 @@ Subsystems<br>
 1. Driveline<br>
    4 independent mecanum wheels with 8.45:1 gearboxes driven by CIM motors<br>
    1 Gyro for angle measurement<br>
-   1 front facing Axis camera<br>
+   1 front facing Axis camera<br><br>
 2. Fuel Shooter<br>
-   Two 775Pro motors driving 4 four inch wheels on a single shaft for shooting fuel<br>
+   <t>Two 775Pro motors driving 4 four inch wheels on a single shaft for shooting fuel<br>
    4 independently driven fuel loaders that hold fuel back from entering shooter wheels<br>
    2 linear servos that a adjust a deflector plate for changing the fuel flight path.<br>
    A lexan box that holds around 30 fuel balls in four independent lanes.<br>
