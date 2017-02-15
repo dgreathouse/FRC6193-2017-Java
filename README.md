@@ -1,7 +1,7 @@
 # FRC6193-2017-Java
 FRC 2017 Robot Code in Java
 
-This code is used to drive the 2017 FRC robot for the 6193 team.
+This code is used to drive the 2017 FRC robot for the 6193 team.<br>
 The robot is configured as follows.
 
 Subsystems
