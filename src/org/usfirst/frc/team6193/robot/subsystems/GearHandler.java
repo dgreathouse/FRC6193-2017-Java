@@ -50,10 +50,10 @@ public class GearHandler extends Subsystem {
     	double rotatMotorCurrent = m_gearHandlerRotateMotorController.getOutputCurrent();
 
     	if(Robot.oi.Logitech.getRawButton(OI.GEARHANDLERSPINNERBUTTONNUM)){
-    		if(spinnerMotorCurrent < Cals.k_ropeClimberSpinnerHoldCurrent){
+    		if(spinnerMotorCurrent < Cals.k_gearGrabberSpinnerHoldCurrent){
     			m_gearHandlerSpinnerMotorController.set(Cals.k_gearHandlerSpinnerSpeed);
     		}
-    		if(rotatMotorCurrent < Cals.k_ropeClimberRotateHoldCurrent){
+    		if(rotatMotorCurrent < Cals.k_gearGrabberRotateHoldCurrent){
     			m_gearHandlerRotateMotorController.set(Robot.oi.Logitech.getX());
     		}
     	}
