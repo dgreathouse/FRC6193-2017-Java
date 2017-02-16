@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /** Driveline class
- * The driveline uses 4 independent motors with 4 inch mecacnum wheels.<br>
+ * The driveline uses 4 independent motors with 4 inch mecanum wheels.<br>
  * The motors are attached to a gearbox with a 8.45:1 gear ratio.<br>
  * A Gyro is available and plugged into the SPI port of the RoboRIO<br><br>
  * 
