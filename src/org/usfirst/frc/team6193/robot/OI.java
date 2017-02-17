@@ -33,6 +33,7 @@ public class OI {
 	// Rope Climber Button Mapping
 	public static final int ROPECLIMBERSLOWBUTTONBUTTONID = 0;
 	public static final int ROPECLIMBERFASTALLOWBUTTONID = 0;
+	public static final int GEARHANDLERREVERSESPINNERBUTTONNUM = 3;
 
 	// Constructor for class OI
 	public OI(){

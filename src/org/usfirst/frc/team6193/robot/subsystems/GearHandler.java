@@ -50,12 +50,25 @@ public class GearHandler extends Subsystem {
     	double rotatMotorCurrent = m_gearHandlerRotateMotorController.getOutputCurrent();
 
     	if(Robot.oi.Logitech.getRawButton(OI.GEARHANDLERSPINNERBUTTONNUM)){
-    		if(spinnerMotorCurrent < Cals.k_gearGrabberSpinnerHoldCurrent){
-    			m_gearHandlerSpinnerMotorController.set(Cals.k_gearHandlerSpinnerSpeed);
+    		if(!Robot.oi.Logitech.getRawButton(OI.GEARHANDLERREVERSESPINNERBUTTONNUM)){
+	    		if(spinnerMotorCurrent < Cals.k_gearGrabberSpinnerHoldCurrent){
+	    			m_gearHandlerSpinnerMotorController.set(Cals.k_gearHandlerSpinnerSpeed);
+	    		}
+	    		if(rotatMotorCurrent < Cals.k_gearGrabberRotateHoldCurrent){
+	    			m_gearHandlerRotateMotorController.set(Robot.oi.Logitech.getX());
+	    		}
+    		}else {
+	    		if(spinnerMotorCurrent < Cals.k_gearGrabberSpinnerHoldCurrent){
+	    			m_gearHandlerSpinnerMotorController.set(-Cals.k_gearHandlerSpinnerSpeed);
+	    		}
+	    		if(rotatMotorCurrent < Cals.k_gearGrabberRotateHoldCurrent){
+	    			m_gearHandlerRotateMotorController.set(Robot.oi.Logitech.getX());
+	    		}
     		}
-    		if(rotatMotorCurrent < Cals.k_gearGrabberRotateHoldCurrent){
-    			m_gearHandlerRotateMotorController.set(Robot.oi.Logitech.getX());
-    		}
+    	}
+    	else {
+    		m_gearHandlerSpinnerMotorController.set(0);
+    		m_gearHandlerRotateMotorController.set(0);
     	}
     }
     /**
