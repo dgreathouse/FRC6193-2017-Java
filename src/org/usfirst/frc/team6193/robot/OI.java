@@ -23,6 +23,7 @@ public class OI {
 	
 	// Gear Handler Button mapping
 	public static final int GEARHANDLERSPINNERBUTTONNUM = 0;
+	public static final int GEARHANDLERREVERSEBUTTONID = 9;
 	
 	// Fuel Intake Button mapping
 	public static final int FUELINTAKESPEEDDOWNBUTTON = 3;
@@ -31,9 +32,8 @@ public class OI {
 	private Button fuelIntakeSpeedDownButton = new JoystickButton(Logitech, FUELINTAKESPEEDDOWNBUTTON);
 	
 	// Rope Climber Button Mapping
-	public static final int ROPECLIMBERSLOWBUTTONBUTTONID = 0;
-	public static final int ROPECLIMBERFASTALLOWBUTTONID = 0;
-	public static final int GEARHANDLERREVERSESPINNERBUTTONNUM = 3;
+	public static final int ROPECLIMBERSLOWBUTTONBUTTONID = 11;
+	public static final int ROPECLIMBERFASTALLOWBUTTONID = 12;
 
 	// Constructor for class OI
 	public OI(){

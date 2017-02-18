@@ -1,5 +1,6 @@
 package org.usfirst.frc.team6193.robot.commandGroups;
 
+import org.usfirst.frc.team6193.robot.commands.DrivelineCalCommand;
 import org.usfirst.frc.team6193.robot.commands.DrivelineDriveCommand;
 import org.usfirst.frc.team6193.robot.commands.DrivelineRotateCommand;
 import org.usfirst.frc.team6193.robot.commands.DrivelineSlideCommand;
@@ -20,26 +21,59 @@ public class Autonomous extends CommandGroup {
     public void AutonomousInit(){
     	int Auto = (int)SmartDashboard.getNumber("Auto", 0);
     	switch(Auto){
-    	case 0: // Default, do nothing
-    		// SAMPLE CODE, Remove when plays are complete
-    		addSequential(new DrivelineDriveCommand(48,0.6));
+    	case 100:
+    		addSequential(new DrivelineCalCommand(5,0.1));
+    		break;
+    	case 102:
+    		addSequential(new DrivelineCalCommand(5,0.2));
+    		break;
+    	case 10: // Position 1R Play 1
+    		addSequential(new FuelShooterShootCommand(0.6, 0.1, true, false, true, false, 7.0));
     		addSequential(new DrivelineSlideCommand(48, -0.6));
     		addSequential(new DrivelineRotateCommand(45, 0.4, 2));
-    		addSequential(new FuelShooterShootCommand(0.6, 0.1, true, false, true, false, 7.0));
-    		addSequential(new GearHandlerAutoCommand(0.4, 0.5, 4, 4, 5));
+    		addSequential(new DrivelineDriveCommand(48,0.6));
+    		addSequential(new DrivelineRotateCommand(45, 0.4, 2));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
     		break;
-    	case 10: // Position 1 play 1
+    	case 20: // Position 2R Play 1
+    		addSequential (new FuelShooterShootCommand(0.5,0.1,true,true,true,true, 7.0) );
+    		addSequential (new DrivelineSlideCommand(48,0.5));
+    		addSequential (new DrivelineRotateCommand(45,0.5,2));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
     		break;
-    	case 15: // Position 1 play 5 on opposite side
+    	case 30: // Position 3R Play 1
+    		addSequential (new FuelShooterShootCommand(0.5,0.1,true,true,true,true, 7.0) );
+    		addSequential (new DrivelineSlideCommand(48,0.5));
+    		addSequential (new DrivelineRotateCommand(45,0.5,2));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
     		break;
-    	case 20: // Position 2 play 1
+    	case 16: // Position 1L Play 1
+    		addSequential (new FuelShooterShootCommand(0.5,0.1,true,true,true,true, 7.0) );
+    		addSequential (new DrivelineSlideCommand(48,0.5));
+    		addSequential (new DrivelineRotateCommand(45,0.5,2));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
+    		addSequential (new DrivelineRotateCommand(48,0.5, 2));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
     		break;
-    	case 25: // Position 2 play 5 on opposite side
+    	case 26: // Position 2L play 1
+    		addSequential (new FuelShooterShootCommand(0.5,0.1,true,true,true,true, 7.0) );
+    		addSequential (new DrivelineSlideCommand(48,0.5));
+    		addSequential (new DrivelineRotateCommand(45,0.5,2));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
     		break;
-    	case 30: // Position 3 play 1
+    	case 36: // Position 2L play 5 on opposite side
+    		addSequential (new FuelShooterShootCommand(0.5,0.1,true,true,true,true, 7.0) );
+    		addSequential (new DrivelineSlideCommand(48,0.5));
+    		addSequential (new DrivelineRotateCommand(45,0.5,2));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
+    		addSequential (new DrivelineDriveCommand(45,0.5));
     		break;
-    	case 35: // Position 3 play 5 on opposite side
-    		break;
+    	
     		
     	}
     }

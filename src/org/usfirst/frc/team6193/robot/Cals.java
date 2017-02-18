@@ -3,9 +3,10 @@ package org.usfirst.frc.team6193.robot;
 public class Cals {
 	public static double k_fuelIntakeSpeedChange = 0.1;
 	public static double k_ropeClimberSlowSpeed = 0.1;
-	public static double k_gearGrabberSpinnerHoldCurrent = 6.0;
-	public static double k_gearGrabberRotateHoldCurrent = 6.0;
+	public static double k_gearHandlerSpinnerHoldCurrent = 6.0;
+	public static double k_gearHandlerRotateHoldCurrent = 6.0;
 	public static double k_gearHandlerSpinnerSpeed = 0.1;
+	public static double k_gearHandlerReverseSpeed = -0.1;
 	public static double k_fuelLoaderReverseSpeed = -0.05;
 	public static double k_fuelLoaderSingleLoaderSpeed = 0.25;
 	public static double k_fuelShooterDefaultDeflectorAngle = 0.1;
