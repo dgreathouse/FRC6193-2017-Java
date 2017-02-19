@@ -12,7 +12,7 @@ public class GearHandlerDefaultCommand extends Command {
 	// Constructor for class
     public GearHandlerDefaultCommand() {
         // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(Robot.gearHandler);
     }
 
     // Called just before this Command runs the first time

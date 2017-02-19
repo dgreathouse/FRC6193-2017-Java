@@ -22,7 +22,7 @@ public class OI {
 	public Joystick XBOX = new Joystick(JOYSTICKXBOX); // Unknown
 	
 	// Gear Handler Button mapping
-	public static final int GEARHANDLERSPINNERBUTTONNUM = 0;
+	public static final int GEARHANDLERSPINNERBUTTONNUM = 1;
 	public static final int GEARHANDLERREVERSEBUTTONID = 9;
 	
 	// Fuel Intake Button mapping
