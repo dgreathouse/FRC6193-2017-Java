@@ -69,20 +69,19 @@ public class GearHandler extends Subsystem {
 		double spinnerMotorCurrent = m_gearHandlerSpinnerMotorController.getOutputCurrent();
 		double rotatMotorCurrent = m_gearHandlerRotateMotorController.getOutputCurrent();
 
-		if (Robot.oi.Logitech.getRawButton(OI.GEARHANDLERSPINNERBUTTONNUM)) {
-			if (Robot.oi.Logitech.getRawButton(OI.GEARHANDLERREVERSEBUTTONID)) {
+		if (Robot.oi.Logitech.getRawButton(OI.GEARHANDLERSPINNERBUTTONNUM)) { // If trigger button is pressed
+			// If current is <~6Amps and Reverse button is pressed
+			if (Robot.oi.Logitech.getRawButton(OI.GEARHANDLERREVERSEBUTTONID) && spinnerMotorCurrent < Cals.k_gearHandlerSpinnerHoldCurrent) {
 				m_gearHandlerRotateMotorController.set(Cals.k_gearHandlerReverseSpeed);
-			} else {
-				if (spinnerMotorCurrent < Cals.k_gearHandlerSpinnerHoldCurrent) {
-					m_gearHandlerSpinnerMotorController.set(Cals.k_gearHandlerSpinnerSpeed);
-				}
-				if (rotatMotorCurrent < Cals.k_gearHandlerRotateHoldCurrent) {
-					m_gearHandlerRotateMotorController.set(Robot.oi.Logitech.getX());
-
-				}
+			// if Reverse button is not pressed, spin until current reaches ~6Amps
+			} else if (spinnerMotorCurrent < Cals.k_gearHandlerSpinnerHoldCurrent) {
+				m_gearHandlerSpinnerMotorController.set(Cals.k_gearHandlerSpinnerSpeed);
 			}
-
-		} else {
+			// Allow gear rotator to work if the button is pressed and current is less than ~6Amps
+			if (rotatMotorCurrent < Cals.k_gearHandlerRotateHoldCurrent) {
+				m_gearHandlerRotateMotorController.set(Robot.oi.Logitech.getX());
+			}
+		} else { // Disable everything if trigger not pressed
 			m_gearHandlerSpinnerMotorController.set(0);
 			m_gearHandlerRotateMotorController.set(0);
 		}
